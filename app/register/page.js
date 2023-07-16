@@ -3,8 +3,10 @@ import InputComponent from '@/UI/InputComponent';
 import SelectComponent from '@/UI/SelectComponent';
 import { Button, Textarea, em } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
+  const router = useRouter();
   const [prefix, setPrefix] = useState('Mr');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -64,6 +66,7 @@ const Register = () => {
     ) {
       return alert('Fill all required fields');
     }
+
     console.log(
       prefix,
       firstName,
@@ -78,6 +81,18 @@ const Register = () => {
       update
     );
   };
+
+  let session;
+  if (typeof window !== 'undefined' && window.localStorage) {
+    session = window.localStorage.getItem('isLoggedIn');
+  }
+  const isLoggedIn = Boolean(session);
+  console.log(isLoggedIn);
+  useEffect(() => {
+    if (!session) {
+      router.replace('/');
+    }
+  }, [session, router]);
   return (
     <div className="min-h-screen pb-[100px] bg-[#D9D9D9]">
       <div className="bg-[#DE5000] py-[130px] min-h-[368px] px-4">
@@ -159,6 +174,7 @@ const Register = () => {
               value={reason}
               onChange={(event) => setReason(event.currentTarget.value)}
               minRows={5}
+              styles={{ input: { border: '1px solid #DE5000' } }}
             />
           </div>
           <div className="md:w-[50%] space-y-4 mt-8">

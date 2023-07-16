@@ -7,9 +7,7 @@ import { useContext, useState } from 'react';
 import { Button as ButtonLucid } from '@/components/ui/button';
 import NavLinks from './NavLinks';
 
-import Button from '@/UI/Button';
 import { AuthContext } from '@/lib/AuthContext';
-import { usePathname } from 'next/navigation';
 
 const navLinks = [
   {
@@ -38,12 +36,11 @@ const navLinks = [
   },
   {
     title: 'CONTACT',
-    link: '/',
+    link: '/contact',
   },
 ];
 
 const Header = () => {
-  const pathName = usePathname();
   let session;
   if (typeof window !== 'undefined' && window.localStorage) {
     session = window.localStorage.getItem('isLoggedIn');

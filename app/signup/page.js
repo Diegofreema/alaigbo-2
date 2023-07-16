@@ -67,8 +67,6 @@ const Login = () => {
     },
   });
 
-  console.log(user);
-
   return (
     <div className="min-h-screen pt-[120px] pb-[100px]">
       <div className="w-[95%] md:w-[80%] mx-auto">

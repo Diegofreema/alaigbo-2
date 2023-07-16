@@ -10,10 +10,9 @@ import axios from 'axios';
 import { Loader2, LogIn } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { startTransition, useContext, useEffect, useState } from 'react';
+import { startTransition, useContext, useState } from 'react';
 
 const SignInPage = () => {
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
@@ -52,12 +51,6 @@ const SignInPage = () => {
   return (
     <div className="h-screen flex items-center justify-center flex-col">
       <div className="sm:w-[50%]  gap-4 w-[95%] grid grid-cols-1">
-        <InputComponent
-          type="text"
-          value={username}
-          setValue={setUsername}
-          label={'Your Email'}
-        />
         <InputComponent
           type="email"
           value={email}
