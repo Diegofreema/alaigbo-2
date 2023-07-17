@@ -2,7 +2,7 @@
 
 import InputComponent from '@/UI/InputComponent';
 import { Button } from '@/components/ui/button';
-import { Slider, Text, Textarea } from '@mantine/core';
+import { Text, Textarea } from '@mantine/core';
 import { useMutation } from '@tanstack/react-query';
 import { Loader2, Send } from 'lucide-react';
 import React, { useState } from 'react';
@@ -45,8 +45,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center justify-center">
-        <div className="w-1/2 mx-auto space-y-3">
+      <div className="min-h-screen flex flex-col py-32 items-center justify-center">
+        <div className="md:w-1/2 w-[95%] mx-auto space-y-3">
           <InputComponent value={name} setValue={setName} label={'Your Name'} />
           <InputComponent
             value={email}
@@ -66,7 +66,7 @@ const Contact = () => {
             <Text>Max {maxLength} words</Text>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex mt-4 justify-center">
           <Button
             disabled={isLoading}
             className="bg-[#DE5000] hover:bg-[#a4460f] transition duration-300"

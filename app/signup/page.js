@@ -210,8 +210,8 @@ const Login = () => {
             </Button>
           </div>
         </div>
-        <div className="flex items-center space-x-2 mt-8">
-          <p>Already have an account?</p>{' '}
+        <div className="flex items-center  mt-8">
+          <p className="mr-2">Already have an account?</p>{' '}
           <Link
             href={'/signIn'}
             className=" text-blue-600 rounded-md transition hover:text-blue-700 duration-300"
