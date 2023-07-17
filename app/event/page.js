@@ -21,7 +21,7 @@ const Event = () => {
         >
           UPCOMING EVENT
         </Title>
-        <div className="grid grid-cols-1 gap-8 w-[50%] sm:grid-cols-2">
+        <div className="grid grid-cols-1 mt-10 md:mt-0 gap-8 md:w-[70%] w-[90%] sm:grid-cols-2">
           <div className="bg-[#DE5000] p-4 rounded-md flex justify-center flex-col items-center">
             <div className="bg-[#EE0000] p-4 w-[80%] rounded-sm">
               <Title order={3} ta={'center'} fw={'bolder'} color="white">
@@ -41,7 +41,9 @@ const Event = () => {
             <Button href="/register" title={'Register'} />
           </div>
           <div className="bg-[#DE5000] p-4 rounded-md flex justify-center flex-col items-center">
-            <Title>COMING SOON</Title>
+            <Title order={2} ta={'center'}>
+              COMING SOON
+            </Title>
           </div>
         </div>
       </div>

@@ -1,4 +1,23 @@
 import React from 'react';
+import SponsorCard from './SponsorCard';
+const images = [
+  {
+    src: '/olu.jpg',
+    text: 'Voice of The East',
+  },
+  {
+    src: '/img1.jpg',
+    text: 'Switch Dev',
+  },
+  {
+    src: '/img2.jpg',
+    text: 'Ruoya Nigeria',
+  },
+  {
+    src: '/img3.jpg',
+    text: 'Service Culture Academy',
+  },
+];
 
 const Sponsor = () => {
   return (
@@ -13,14 +32,10 @@ const Sponsor = () => {
             technology hub of Africa by 2050.
           </p>
         </div>
-        <div className="grid lg:grid-cols-7 md:grid-cols-4 grid-cols-1 gap-4 mt-[100px]">
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
-          <div className="border border-gray-300 h-[200px]"></div>
+        <div className="grid  md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 mt-[100px]">
+          {images.map(({ src, text }) => (
+            <SponsorCard key={src} src={src} text={text} />
+          ))}
         </div>
       </div>
     </div>
